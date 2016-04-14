@@ -95,6 +95,11 @@ function start(path,args,options,name){
         }catch(e){}
     }
 
+    if(!fs.existsSync(path)){
+        console.error("Sorry, but cant start "+name +'. ' +path +'doesnt exists!');
+        return;
+    }
+
     console.info('Start '+ name);
 
     options.path = path;
