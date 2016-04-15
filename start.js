@@ -95,6 +95,10 @@ function start(path,args,options,name){
         }catch(e){}
     }
 
+    if(OS=='windows'){
+        path+='.exe';
+    }
+
     if(!fs.existsSync(path)){
         console.error("Sorry, but cant start "+name +'. ' +path +'doesnt exists!');
         return;
